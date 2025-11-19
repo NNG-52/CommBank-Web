@@ -14,7 +14,6 @@ import { Theme } from '../../components/Theme'
 import { BaseEmoji } from 'emoji-mart/dist-es/utils/emoji-index/nimble-emoji-index'
 import EmojiPicker from '../../components/EmojiPicker'
 import GoalIcon from './GoalIcon'
-import { TransparentButton } from '../../components/TransparentButton'
 import AddIconButton from './AddIconButton'
 
 type Props = { goal: Goal }
@@ -74,7 +73,7 @@ export function GoalManager(props: Props) {
     }
 
     dispatch(updateGoalRedux(updatedGoal))
-    // TODO(TASK-3) Update database
+    updateGoalApi(props.goal.id, updatedGoal)
   }
   
   useEffect(() => {
